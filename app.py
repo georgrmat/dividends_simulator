@@ -27,7 +27,7 @@ def simulate_investment(init_invest, alpha, nb_years, add_year, add_month):
 st.title("Simulateur d'Investissement")
 
 # Choix de la langue
-language = st.radio("Choose language:", ("Français", "English"))
+language = st.sidebar.radio("Choose language:", ("English", "Français"))
 
 # Traduction
 if language == "Français":
