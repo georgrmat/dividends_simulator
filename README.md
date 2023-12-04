@@ -10,8 +10,9 @@ This Streamlit project serves as a demonstration of compound interest calculatio
 
 Make sure you have Python and Streamlit installed on your system.
 
-
+'''bash
 pip install streamlit
+'''
 
 # Streamlit Project
 
@@ -25,19 +26,21 @@ This Streamlit project serves as a demonstration of compound interest calculatio
 
 Make sure you have [Python](https://www.python.org/downloads/) and [Streamlit](https://docs.streamlit.io/installation) installed on your system.
 
-
+'''bash
 pip install streamlit
-Running the Application
+'''
+
+## Running the Application
 Clone this repository:
-
-
+'''bash
 git clone https://github.com/yourusername/streamlit-project.git
 cd streamlit-project
 Run the Streamlit app:
 streamlit run app.py
+'''
 The application will open in your default web browser.
 
-Usage
+## Usage
 Upon launching the application, you will see various sections.
 Click the "Show/Hide Guide" checkbox to toggle the visibility of the explanatory guide.
 Explore the interactive features to simulate the evolution of an investment over a specified number of years.
