@@ -49,7 +49,7 @@ elif language == "English":
     st.write("Simulation of investment evolution over N years")
     st.sidebar.write("Parameters:")
     init_invest = st.sidebar.number_input("Initial investment", min_value=0.0, value=1000.0)
-    alpha = st.sidebar.slider("Annual growth percentage (%)", min_value=0, max_value = 100, value=100)
+    alpha = st.sidebar.slider("Annual growth percentage (%)", min_value=0, max_value = 100, value=3)
     nb_years = st.sidebar.slider("Number of years", min_value=1, max_value=100, value=50)
     add_year = st.sidebar.number_input("Annual contribution", min_value=0.0, value=100.0)
     add_month = st.sidebar.number_input("Monthly contribution", min_value=0.0, value=0.0)
