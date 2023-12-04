@@ -27,9 +27,28 @@ def simulate_investment(init_invest, alpha, nb_years, add_year, add_month):
 # Choix de la langue
 language = st.sidebar.radio("Language / Langue", ("English", "Français"))
 
+    
+
+    # Explanatory Guide Section
+    if show_guide:
+        st.subheader("Explanatory Guide")
+
+        explanation_text = """
+        Imagine you have some money that you deposit in a bank or invest. Compound interest is like that money generating small earnings, 
+        and then those earnings themselves generating more earnings. It's a growth that accelerates over time. It's like a snowball rolling and 
+        getting bigger as it goes. Compound interest makes your money work for you, and as time goes on, this growth becomes more significant. 
+        It's a clever way to increase your money over the years, simply by letting the interest accumulate and multiply.
+
+        Let's take a simple example to better understand compound interest...
+        """
+
+        st.markdown(explanation_text)
+
+
 # Traduction
 if language == "Français":
     st.title("Simulateur d'Investissement")
+    montrer_guide = st.button("Afficher le guide")
     st.sidebar.write("**Paramètres**")
     init_invest = st.sidebar.number_input("Investissement initial", min_value=0.0, value=1000.0)
     alpha = st.sidebar.slider("Taux de croissance annuelle (%)", min_value=0, max_value=100, value = 3)
@@ -38,17 +57,18 @@ if language == "Français":
     add_month = st.sidebar.number_input("Contribution mensuelle", min_value=0.0, value=0.0)
 
     # Guide
-    st.subheader("Guide explicatif")
-    texte_explication = """
-    Imaginez que vous avez de l'argent que vous déposez dans une banque ou investissez. Les intérêts composés, c'est comme si cet argent générait des petits revenus, et ensuite ces revenus eux-mêmes généraient à leur tour d'autres revenus. C'est une croissance qui s'accélère au fil du temps. C'est comme une boule de neige qui roule et qui grossit à mesure qu'elle avance. Les intérêts composés font en sorte que votre argent travaille pour vous, et plus le temps passe, plus cette croissance devient importante. C'est un moyen astucieux d'augmenter votre argent au fil des années, simplement en laissant les intérêts s'accumuler et se multiplier.
-
-    Prenons un exemple simple pour mieux comprendre les intérêts composés. Imaginons que vous investissiez 100 € à un taux d'intérêt de 5 % par an. Après la première année, vous auriez 105 € (votre capital initial de 100 € plus 5 € d'intérêts).
-
-    Maintenant, au lieu de retirer ces 5 €, vous décidez de les laisser dans l'investissement. L'année suivante, le taux d'intérêt s'applique non seulement à votre capital initial de 100 €, mais aussi aux 5 € d'intérêts de l'année précédente. Ainsi, à la fin de la deuxième année, vous auriez 110,25 € (100 € + 5 € + 5,25 € d'intérêts).
+    if montrer_guide:
+        st.subheader("Guide explicatif")
+        texte_explication = """
+        Imaginez que vous avez de l'argent que vous déposez dans une banque ou investissez. Les intérêts composés, c'est comme si cet argent générait des petits revenus, et ensuite ces revenus eux-mêmes généraient à leur tour d'autres revenus. C'est une croissance qui s'accélère au fil du temps. C'est comme une boule de neige qui roule et qui grossit à mesure qu'elle avance. Les intérêts composés font en sorte que votre argent travaille pour vous, et plus le temps passe, plus cette croissance devient importante. C'est un moyen astucieux d'augmenter votre argent au fil des années, simplement en laissant les intérêts s'accumuler et se multiplier.
     
-    Vous pouvez voir comment, avec les intérêts composés, les gains de chaque année sont ajoutés à votre capital, et les intérêts s'accumulent sur l'ensemble du montant, non seulement sur la somme initiale. Au fil des années, cet effet d'accumulation devient de plus en plus significatif, créant une croissance exponentielle de votre investissement. C'est la magie des intérêts composés en action.
-    """
-    st.markdown(texte_explication)
+        Prenons un exemple simple pour mieux comprendre les intérêts composés. Imaginons que vous investissiez 100 € à un taux d'intérêt de 5 % par an. Après la première année, vous auriez 105 € (votre capital initial de 100 € plus 5 € d'intérêts).
+    
+        Maintenant, au lieu de retirer ces 5 €, vous décidez de les laisser dans l'investissement. L'année suivante, le taux d'intérêt s'applique non seulement à votre capital initial de 100 €, mais aussi aux 5 € d'intérêts de l'année précédente. Ainsi, à la fin de la deuxième année, vous auriez 110,25 € (100 € + 5 € + 5,25 € d'intérêts).
+        
+        Vous pouvez voir comment, avec les intérêts composés, les gains de chaque année sont ajoutés à votre capital, et les intérêts s'accumulent sur l'ensemble du montant, non seulement sur la somme initiale. Au fil des années, cet effet d'accumulation devient de plus en plus significatif, créant une croissance exponentielle de votre investissement. C'est la magie des intérêts composés en action.
+        """
+        st.markdown(texte_explication)
     
     # Calcul et affichage des résultats
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
@@ -60,7 +80,7 @@ if language == "Français":
 
 elif language == "English":
     st.title("Investing simulator")
-    
+    show_guide = st.button("Show Guide")
     st.sidebar.write("**Parameters**")
     init_invest = st.sidebar.number_input("Initial investment", min_value=0.0, value=1000.0)
     alpha = st.sidebar.slider("Annual growth percentage (%)", min_value=0, max_value = 100, value=3)
@@ -72,20 +92,21 @@ elif language == "English":
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
 
     #Guide
-    st.subheader("Explanatory Guide")
-    explanation_text = """
-    Imagine you have some money that you deposit in a bank or invest. Compound interest is like that money generating small earnings, 
-    and then those earnings themselves generating more earnings. It's a growth that accelerates over time. It's like a snowball rolling and 
-    getting bigger as it goes. Compound interest makes your money work for you, and as time goes on, this growth becomes more significant. 
-    It's a clever way to increase your money over the years, simply by letting the interest accumulate and multiply.
+    if show_guide:
+        st.subheader("Explanatory Guide")
+        explanation_text = """
+        Imagine you have some money that you deposit in a bank or invest. Compound interest is like that money generating small earnings, 
+        and then those earnings themselves generating more earnings. It's a growth that accelerates over time. It's like a snowball rolling and 
+        getting bigger as it goes. Compound interest makes your money work for you, and as time goes on, this growth becomes more significant. 
+        It's a clever way to increase your money over the years, simply by letting the interest accumulate and multiply.
+        
+        Let's take a simple example to better understand compound interest. Suppose you invest \$100 at an interest rate of 5% per year. After the first year, you would have \$105 (your initial capital of \$100 plus \$5 in interest).
     
-    Let's take a simple example to better understand compound interest. Suppose you invest \$100 at an interest rate of 5% per year. After the first year, you would have \$105 (your initial capital of \$100 plus \$5 in interest).
-
-    Now, instead of withdrawing that \$5, you decide to leave it in the investment. The next year, the interest rate applies not only to your initial capital of \$100 but also to the \$5 in interest from the previous year. So, at the end of the second year, you would have \$110.25 (\$100 + \$5 + \$5.25 in interest).
-    
-    You can see how, with compound interest, the gains from each year are added to your capital, and interest accumulates on the entire amount, not just the initial sum. Over the years, this compounding effect becomes increasingly significant, creating exponential growth in your investment. That's the magic of compound interest in action.
-    """
-    st.markdown(explanation_text)
+        Now, instead of withdrawing that \$5, you decide to leave it in the investment. The next year, the interest rate applies not only to your initial capital of \$100 but also to the \$5 in interest from the previous year. So, at the end of the second year, you would have \$110.25 (\$100 + \$5 + \$5.25 in interest).
+        
+        You can see how, with compound interest, the gains from each year are added to your capital, and interest accumulates on the entire amount, not just the initial sum. Over the years, this compounding effect becomes increasingly significant, creating exponential growth in your investment. That's the magic of compound interest in action.
+        """
+        st.markdown(explanation_text)
 
     # Charts
     st.subheader("Chart")
