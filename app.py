@@ -81,7 +81,7 @@ elif language == "English":
     
     Let's take a simple example to better understand compound interest. Suppose you invest \$100 at an interest rate of 5% per year. After the first year, you would have \$105 (your initial capital of \$100 plus \$5 in interest).
 
-    Now, instead of withdrawing that \$5, you decide to leave it in the investment. The next year, the interest rate applies not only to your initial capital of $100 but also to the \$5 in interest from the previous year. So, at the end of the second year, you would have \$110.25 (\$100 + \$5 + \$5.25 in interest).
+    Now, instead of withdrawing that \$5, you decide to leave it in the investment. The next year, the interest rate applies not only to your initial capital of \$100 but also to the \$5 in interest from the previous year. So, at the end of the second year, you would have \$110.25 (\$100 + \$5 + \$5.25 in interest).
     
     You can see how, with compound interest, the gains from each year are added to your capital, and interest accumulates on the entire amount, not just the initial sum. Over the years, this compounding effect becomes increasingly significant, creating exponential growth in your investment. That's the magic of compound interest in action.
     """
