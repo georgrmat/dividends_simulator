@@ -48,7 +48,7 @@ if language == "Français":
 
     Prenons un exemple simple pour mieux comprendre les intérêts composés...
     """
-    st.markdown(texte_explication)
+    st.write(texte_explication)
 
 elif language == "English":
     st.title("Investing simulator")
