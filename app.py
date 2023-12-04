@@ -3,16 +3,16 @@ import streamlit as st
 import numpy as np
 
 # Code de calcul
-def simulate_investment(init_invest, alpha, nb_years, add_year, add_month):
-    invest = init_invest
-    total = init_invest
-    evolution = [init_invest]
-    invested = [init_invest]
+def simulate_investment(init_invest: float, alpha: float, nb_years: int, add_year: float, add_month:float):
+    invest = init_invest  # total investment
+    total = init_invest   # total value of portfolio
+    evolution = [init_invest]   # list containing the evolution of your investments
+    invested = [init_invest]   # list containing the the investments you made
 
     for i in range(nb_years):
-        new = 0
-        new += 12 * add_month
-        new += add_year
+        new = 0  # new investment to be added
+        new += 12 * add_month  # invest monthly
+        new += add_year   # invest yearly
 
         invest += new
         invested.append(invest)
@@ -31,6 +31,8 @@ language = st.sidebar.radio("Language / Langue", ("English", "Français"))
 if language == "Français":
     st.title("Simulateur d'Investissement")
     montrer_guide = st.checkbox("Afficher/Cacher le guide")
+    
+    # parametres
     st.sidebar.write("**Paramètres**")
     init_invest = st.sidebar.number_input("Investissement initial", min_value=0.0, value=1000.0)
     nb_years = st.sidebar.slider("Nombre d'années", min_value=1, max_value=100, value=50)
@@ -63,6 +65,8 @@ if language == "Français":
 elif language == "English":
     st.title("Investing simulator")
     show_guide = st.checkbox("Show/Hide Guide")
+
+    # parameters
     st.sidebar.write("**Parameters**")
     init_invest = st.sidebar.number_input("Initial investment", min_value=0.0, value=1000.0)
     nb_years = st.sidebar.slider("Number of years", min_value=1, max_value=100, value=50)
