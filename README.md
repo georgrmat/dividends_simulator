@@ -35,7 +35,10 @@ Clone this repository:
 ```bash
 git clone https://github.com/georgrmat/dividends_simulator.git
 cd dividends_simulator
+```
+
 Run the Streamlit app:
+```bash
 streamlit run app.py
 ```
 The application will open in your default web browser.
@@ -44,7 +47,8 @@ The application will open in your default web browser.
 Upon launching the application, you will see various sections.
 Click the "Show/Hide Guide" checkbox to toggle the visibility of the explanatory guide.
 Explore the interactive features to simulate the evolution of an investment over a specified number of years.
-Contributing
+
+## Contributing
 If you'd like to contribute to this project, please follow these steps:
 
 ## Fork the repository.
