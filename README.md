@@ -26,18 +26,18 @@ This Streamlit project serves as a demonstration of compound interest calculatio
 
 Make sure you have [Python](https://www.python.org/downloads/) and [Streamlit](https://docs.streamlit.io/installation) installed on your system.
 
-'''bash
+```bash
 pip install streamlit
-'''
+```
 
 ## Running the Application
 Clone this repository:
-'''bash
-git clone https://github.com/yourusername/streamlit-project.git
-cd streamlit-project
+```bash
+git clone https://github.com/georgrmat/dividends_simulator.git
+cd dividends_simulator
 Run the Streamlit app:
 streamlit run app.py
-'''
+```
 The application will open in your default web browser.
 
 ## Usage
@@ -47,7 +47,7 @@ Explore the interactive features to simulate the evolution of an investment over
 Contributing
 If you'd like to contribute to this project, please follow these steps:
 
-Fork the repository.
+## Fork the repository.
 Create a new branch for your feature: git checkout -b feature-name.
 Commit your changes: git commit -m 'Add a new feature'.
 Push to the branch: git push origin feature-name.
