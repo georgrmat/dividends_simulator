@@ -29,13 +29,11 @@ Make sure you have [Python](https://www.python.org/downloads/) and [Streamlit](h
 pip install streamlit
 Running the Application
 Clone this repository:
-bash
-Copy code
+
+
 git clone https://github.com/yourusername/streamlit-project.git
 cd streamlit-project
 Run the Streamlit app:
-bash
-Copy code
 streamlit run app.py
 The application will open in your default web browser.
 
@@ -54,11 +52,10 @@ Open a pull request.
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-Acknowledgments
+## Acknowledgments
 Thanks to Streamlit for providing a simple and effective way to create interactive web applications with Python.
 Inspiration for this project came from the desire to demonstrate compound interest calculations in a user-friendly manner.
-csharp
-Copy code
+
 
 Feel free to copy and paste this README.md content into your project, and modify it as needed.
 
