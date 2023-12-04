@@ -10,7 +10,7 @@ This Streamlit project serves as a demonstration of compound interest calculatio
 
 Make sure you have Python and Streamlit installed on your system.
 
-```bash
+
 pip install streamlit
 
 # Streamlit Project
@@ -25,7 +25,7 @@ This Streamlit project serves as a demonstration of compound interest calculatio
 
 Make sure you have [Python](https://www.python.org/downloads/) and [Streamlit](https://docs.streamlit.io/installation) installed on your system.
 
-```bash
+
 pip install streamlit
 Running the Application
 Clone this repository:
