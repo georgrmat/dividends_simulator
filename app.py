@@ -1,5 +1,5 @@
+# https://dividendssimulator-gpgytq3pwyrjyh7mhakt3d.streamlit.app/
 import streamlit as st
-#import matplotlib.pyplot as plt
 import numpy as np
 
 # Code de calcul
