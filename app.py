@@ -42,7 +42,7 @@ if language == "Français":
     # Calcul et affichage des résultats
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
     st.line_chart({"Investi": invested, "Valeur totale": evolution})
-    st.write(f"**Somme totale investie:** {np.round(invested[-1], 2)}")
+    st.write(f"**Somme totale investie:** {"{:,.2f}".format(np.round(invested[-1], 2))}")
     st.write(f"**Valeur totale du portefeuille:** {np.round(evolution[-1], 2)}")
 
 elif language == "English":
