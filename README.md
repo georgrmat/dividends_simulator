@@ -10,9 +10,9 @@ This Streamlit project serves as a demonstration of compound interest calculatio
 
 Make sure you have Python and Streamlit installed on your system.
 
-'''bash
+```bash
 pip install streamlit
-'''
+```
 
 # Streamlit Project
 
