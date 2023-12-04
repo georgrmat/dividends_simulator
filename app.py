@@ -30,7 +30,7 @@ language = st.sidebar.radio("Language / Langue", ("English", "Français"))
 # Traduction
 if language == "Français":
     st.title("Simulateur d'Investissement")
-    montrer_guide = st.button("Afficher le guide")
+    montrer_guide = st.checkbox("Afficher/Cacher le guide")
     st.sidebar.write("**Paramètres**")
     init_invest = st.sidebar.number_input("Investissement initial", min_value=0.0, value=1000.0)
     alpha = st.sidebar.slider("Taux de croissance annuelle (%)", min_value=0, max_value=100, value = 3)
@@ -62,7 +62,7 @@ if language == "Français":
 
 elif language == "English":
     st.title("Investing simulator")
-    show_guide = st.button("Show Guide")
+    show_guide = st.checkbox("Show/Hide Guide")
     st.sidebar.write("**Parameters**")
     init_invest = st.sidebar.number_input("Initial investment", min_value=0.0, value=1000.0)
     alpha = st.sidebar.slider("Annual growth percentage (%)", min_value=0, max_value = 100, value=3)
