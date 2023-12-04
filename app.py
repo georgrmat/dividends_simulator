@@ -27,24 +27,6 @@ def simulate_investment(init_invest, alpha, nb_years, add_year, add_month):
 # Choix de la langue
 language = st.sidebar.radio("Language / Langue", ("English", "Français"))
 
-    
-
-    # Explanatory Guide Section
-    if show_guide:
-        st.subheader("Explanatory Guide")
-
-        explanation_text = """
-        Imagine you have some money that you deposit in a bank or invest. Compound interest is like that money generating small earnings, 
-        and then those earnings themselves generating more earnings. It's a growth that accelerates over time. It's like a snowball rolling and 
-        getting bigger as it goes. Compound interest makes your money work for you, and as time goes on, this growth becomes more significant. 
-        It's a clever way to increase your money over the years, simply by letting the interest accumulate and multiply.
-
-        Let's take a simple example to better understand compound interest...
-        """
-
-        st.markdown(explanation_text)
-
-
 # Traduction
 if language == "Français":
     st.title("Simulateur d'Investissement")
