@@ -30,8 +30,7 @@ language = st.sidebar.radio("Language / Langue", ("English", "Français"))
 # Traduction
 if language == "Français":
     st.title("Simulateur d'Investissement")
-    st.write("Simulation d'évolution d'investissement sur N années")
-    st.sidebar.write("Paramètres")
+    st.sidebar.write("**Paramètres**")
     init_invest = st.sidebar.number_input("Investissement initial", min_value=0.0, value=1000.0)
     alpha = st.sidebar.slider("Taux de croissance annuelle (%)", min_value=0, max_value=100, value = 3)
     nb_years = st.sidebar.slider("Nombre d'années", min_value=1, max_value=100, value=50)
@@ -39,6 +38,7 @@ if language == "Français":
     add_month = st.sidebar.number_input("Contribution mensuelle", min_value=0.0, value=0.0)
 
     # Guide
+    st.subheader("Guide explicatif")
     texte_explication = """
     Imaginez que vous avez de l'argent que vous déposez dans une banque ou investissez. Les intérêts composés, c'est comme si cet argent générait des petits revenus, et ensuite ces revenus eux-mêmes généraient à leur tour d'autres revenus. C'est une croissance qui s'accélère au fil du temps. C'est comme une boule de neige qui roule et qui grossit à mesure qu'elle avance. Les intérêts composés font en sorte que votre argent travaille pour vous, et plus le temps passe, plus cette croissance devient importante. C'est un moyen astucieux d'augmenter votre argent au fil des années, simplement en laissant les intérêts s'accumuler et se multiplier.
 
@@ -48,14 +48,16 @@ if language == "Français":
     
     # Calcul et affichage des résultats
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
+    st.subheader("Graphique")
+    st.write(f"Simulation d'évolution d'investissement sur {nb_years} année(s)")
     st.line_chart({"Investi": invested, "Valeur totale": evolution})
     st.write(f"**Somme totale investie:** {'{:,.2f}'.format(np.round(invested[-1], 2))}")
     st.write(f"**Valeur totale du portefeuille:** {'{:,.2f}'.format(np.round(evolution[-1], 2))}")   
 
 elif language == "English":
     st.title("Investing simulator")
-    st.write("Simulation of investment evolution over N years")
-    st.sidebar.write("Parameters:")
+    
+    st.sidebar.write("**Parameters**")
     init_invest = st.sidebar.number_input("Initial investment", min_value=0.0, value=1000.0)
     alpha = st.sidebar.slider("Annual growth percentage (%)", min_value=0, max_value = 100, value=3)
     nb_years = st.sidebar.slider("Number of years", min_value=1, max_value=100, value=50)
@@ -66,6 +68,7 @@ elif language == "English":
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
 
     #Guide
+    st.header("Explanatory Guide")
     explanation_text = """
     Imagine you have some money that you deposit in a bank or invest. Compound interest is like that money generating small earnings, 
     and then those earnings themselves generating more earnings. It's a growth that accelerates over time. It's like a snowball rolling and 
@@ -77,6 +80,7 @@ elif language == "English":
     st.markdown(explanation_text)
 
     # Charts
+    st.subheader("Chart")
     st.line_chart({"Invested": invested, "Total Value": evolution})
     st.write(f"**Total invested:** {'{:,.2f}'.format(np.round(invested[-1], 2))}")
     st.write(f"**Total value:** {'{:,.2f}'.format(np.round(evolution[-1], 2))}")
