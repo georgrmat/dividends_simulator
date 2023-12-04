@@ -42,6 +42,7 @@ if language == "Français":
     # Calcul et affichage des résultats
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
     st.line_chart({"Investi": invested, "Valeur totale": evolution})
+    st.write(f"Somme totale investie: {invested[-1]}", f"Valeur totale du portefeuille: {evolution[-1]}")
 
 elif language == "English":
     st.write("Simulation of investment evolution over N years")
@@ -55,3 +56,4 @@ elif language == "English":
     # Calculation and display of results
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
     st.line_chart({"Invested": invested, "Total Value": evolution})
+    st.write(f"Total invested: {invested[-1]}", f"Total value: {evolution[-1]}")
