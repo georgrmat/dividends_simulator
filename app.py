@@ -24,13 +24,12 @@ def simulate_investment(init_invest, alpha, nb_years, add_year, add_month):
     return invested, evolution
 
 # Interface utilisateur
-st.title("Simulateur d'Investissement")
-
 # Choix de la langue
 language = st.sidebar.radio("Language / Langue", ("English", "Français"))
 
 # Traduction
 if language == "Français":
+    st.title("Simulateur d'Investissement")
     st.write("Simulation d'évolution d'investissement sur N années")
     st.sidebar.write("Paramètres")
     init_invest = st.sidebar.number_input("Investissement initial", min_value=0.0, value=1000.0)
@@ -46,6 +45,7 @@ if language == "Français":
     st.write(f"**Valeur totale du portefeuille:** {'{:,.2f}'.format(np.round(evolution[-1], 2))}")    
 
 elif language == "English":
+    st.title("Investing simulator")
     st.write("Simulation of investment evolution over N years")
     st.sidebar.write("Parameters:")
     init_invest = st.sidebar.number_input("Initial investment", min_value=0.0, value=1000.0)
