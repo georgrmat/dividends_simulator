@@ -42,7 +42,13 @@ if language == "Français":
     invested, evolution = simulate_investment(init_invest, alpha, nb_years, add_year, add_month)
     st.line_chart({"Investi": invested, "Valeur totale": evolution})
     st.write(f"**Somme totale investie:** {'{:,.2f}'.format(np.round(invested[-1], 2))}")
-    st.write(f"**Valeur totale du portefeuille:** {'{:,.2f}'.format(np.round(evolution[-1], 2))}")    
+    st.write(f"**Valeur totale du portefeuille:** {'{:,.2f}'.format(np.round(evolution[-1], 2))}")   
+    texte_explication = """
+    Imaginez que vous avez de l'argent que vous déposez dans une banque ou investissez. Les intérêts composés, c'est comme si cet argent générait des petits revenus, et ensuite ces revenus eux-mêmes généraient à leur tour d'autres revenus. C'est une croissance qui s'accélère au fil du temps. C'est comme une boule de neige qui roule et qui grossit à mesure qu'elle avance. Les intérêts composés font en sorte que votre argent travaille pour vous, et plus le temps passe, plus cette croissance devient importante. C'est un moyen astucieux d'augmenter votre argent au fil des années, simplement en laissant les intérêts s'accumuler et se multiplier.
+
+    Prenons un exemple simple pour mieux comprendre les intérêts composés...
+    """
+    st.markdown(texte_explication)
 
 elif language == "English":
     st.title("Investing simulator")
@@ -59,3 +65,13 @@ elif language == "English":
     st.line_chart({"Invested": invested, "Total Value": evolution})
     st.write(f"**Total invested:** {'{:,.2f}'.format(np.round(invested[-1], 2))}")
     st.write(f"**Total value:** {'{:,.2f}'.format(np.round(evolution[-1], 2))}")
+    explanation_text = """
+    Imagine you have some money that you deposit in a bank or invest. Compound interest is like that money generating small earnings, 
+    and then those earnings themselves generating more earnings. It's a growth that accelerates over time. It's like a snowball rolling and 
+    getting bigger as it goes. Compound interest makes your money work for you, and as time goes on, this growth becomes more significant. 
+    It's a clever way to increase your money over the years, simply by letting the interest accumulate and multiply.
+    
+    Let's take a simple example to better understand compound interest...
+    """
+    
+    st.markdown(explanation_text)
